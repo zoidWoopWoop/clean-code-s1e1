@@ -1,44 +1,52 @@
 /* Basic Style */
 body {
   background-color: #f8f8f8;
-  color           : #333;
-  font-family     : Lato, sans-serif;
+  color: #333;
+  font-family: Lato, sans-serif;
 }
 
-.aaa {
-  width     : 500px;
-  margin    : 0 auto;
-  display   : block;
+.header {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
   text-align: right;
 }
 
-.aaa img {
+.header__img {
   width: 100%;
 }
 
-.aaa .more_inf {
+.header__link {
   font-family: fantasy, cursive;
 }
 
+
 @media (max-width:768px) {
-  .aaa {
+
+  .header {
     text-align: center;
   }
+
 }
 
-.centered-main-page-element {
+.main {
   display: block;
-  width  : 400px;
-  margin : 0 auto 0;
+  width: 500px;
+  margin: 0 auto 0;
 }
 
 .task {
-  width  : 56%;
+  width: 56%;
   display: inline-block;
+  flex-grow: 1;
+}
+
+.task-wrapper {
+  display: flex;
 }
 
 ul {
-  margin : 0;
+  margin: 0;
   padding: 0px;
 }
 
@@ -52,118 +60,129 @@ button {
   outline: none;
 }
 
-button {
-  background : none;
-  border     : 0px;
-  color      : #888;
-  font-size  : 15px;
-  width      : 60px;
+.btn {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
   font-family: Lato, sans-serif;
-  cursor     : pointer;
+  cursor: pointer;
 }
 
-button:hover {
-  color: #3a3A3a;
+.btn:hover {
+  color: #3a3a3a;
 }
 
 /* Heading */
-h3,
-label[for="new-task"] {
-  color         : #333;
-  font-weight   : 700;
-  font-size     : 15px;
-  border-bottom : 2px solid #333;
-  padding       : 30px 0 10px;
-  margin        : 0;
+.title {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 30px 0 10px;
+  margin: 0;
   text-transform: uppercase;
 }
 
-input[type="text"] {
-  margin       : 0;
-  font-size    : 18px;
-  line-height  : 18px;
-  height       : 21px;
-  padding      : 0 9px;
-  border       : 1px solid #dDd;
-  background   : #FFF;
+.add-task__text,
+.incomplete-task__text,
+.completed-task__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 21px;
+  padding: 0 9px;
+  border: 1px solid #ddd;
+  background: #fff;
   border-radius: 6px;
-  font-family  : Lato, sans-serif;
-  color        : #888;
+  font-family: Lato, sans-serif;
+  color: #888;
 }
 
-input[type="text"]:focus {
+.add-task__text:focus,
+.incomplete-task__text:focus,
+.completed-task__text:focus {
   color: #333;
 }
 
 /* New Task */
-label[for="new-task"] {
+.add-task__title {
   display: block;
-  margin : 0 0 20px;
+  margin: 0 0 20px;
 }
 
-input#new-task {
+.add-task__text {
   width: 318px;
 }
 
-p>button:hover {
-  color: #0FC57C;
+.add:hover {
+  color: #0fc57c;
 }
 
 /* Task list */
-li {
-  overflow     : hidden;
-  padding      : 20px 0;
+.incomplete-task__item,
+.completed-task__item {
+  overflow: hidden;
+  padding: 20px 0;
   border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-li>* {
+li > * {
   vertical-align: middle;
 }
 
-li>input[type="checkbox"] {
+.incomplete-task__checkbox,
+.completed-task__checkbox {
   margin: 0 10px;
 }
 
-li>label {
+.incomplete-task__text,
+.completed-task__text {
   padding-left: 10px;
-  box-sizing  : border-box;
-  font-size   : 18px;
-  width       : 226px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 226px;
 }
 
-li>input[type="text"] {
-  width: 226px
+.incomplete-task__text,
+.completed-task__text {
+  width: 226px;
 }
 
-li>button.delete:hover {
-  color: #CF2323;
+.delete:hover {
+  color: #cf2323;
 }
 
-button.delete img {
-  height    : 2em;
-  transform : rotateZ(45deg);
+.delete img {
+  height: 2em;
+  transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-button.delete img:hover {
+.delete img:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul#completed-tasks label {
-  text-decoration: line-through color: #888;
+.name_done {
+  text-decoration: line-through;
+  color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
-  display: none
+.text_hidden {
+  display: none;
 }
 
-ul li.editMode input[type=text] {
+.text_edit {
   display: inline-block;
-  width  : 224px
+  width: 224px;
 }
 
-ul li.editMode label {
+.name_edit {
   display: none;
 }
